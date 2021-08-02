@@ -57,3 +57,18 @@
 | PUT | Update/Replace | 405 (Method Not Allowed), unless you want to update/replace every resource in the entire collection. | 200 (OK) or 204 (No Content). 404 (Not Found), if ID not found or invalid.|
 |PATCH | Update/Modify | 405 (Method Not Allowed), unless you want to modify the collection itself.| 200 (OK) or 204 (No Content). 404 (Not Found), if ID not found or invalid.|
 |DELETE | Delete | 405 (Method Not Allowed), unless you want to delete the whole collection—not often desirable. | 200 (OK). 404 (Not Found), if ID not found or invalid.|
+
+## REST API - Response Codes and Statuse
+
+|Code|Status|Description|
+|----|------|-----------|
+|200| OK | The request was successfully completed.|
+|201 | Created | A new resource was successfully created.|
+|400|Bad Request | The request was invalid.|
+|401|Unauthorized|The request did not include an authentication token or the authentication token was expired.|
+| 403| Forbidden | The client did not have permission to access the requested resource.|
+| 404 | Not Found | The requested resource was not found.|
+| 405 | Method Not Allowed | The HTTP method in the request was not supported by the resource. For example, the DELETE method cannot be used with the Agent API.|
+| 409 | Conflict | The request could not be completed due to a conflict. For example,  POST ContentStore Folder API cannot complete if the given file or folder name already exists in the parent location.|
+| 500 | Internal Server Error | The request was not completed due to an internal error on the server side.|
+| 503 | Service Unavailable | The server was unavailable.|
